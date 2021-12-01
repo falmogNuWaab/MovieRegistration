@@ -5,7 +5,17 @@
         <input type="text" name="ID" />
     </p>
     <p>
-        Title: <input type="text" name="Title" maxlength="50" />
+        <script type="text/javascript">
+            function validateTitle() {
+                var titleField = document.getElementById("Title");
+                const titleTest = titleField.value.length < 50;
+                if (!titleTest) {
+                    alert("Title cannot be longer than 50 characters")
+                }
+            }
+        </script>
+        Title: <input type="text" name="Title" id="Title" placeholder="maximum 50 characters" onchange="validateTitle()"/>
+        
     </p>
     <p>
         Genre:
@@ -25,6 +35,6 @@
     <p>
         Directors: <input type="text" name="Directors" />
     </p>
-    <input type="submit" />
+    <input type="submit"/>
 
 </form>
